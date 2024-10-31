@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #8B5CF6;
+  --primary-light: #A78BFA;
+  --primary-dark: #7C3AED;
+  --bg-light: #F3F4F6;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-[#F3F4F6];
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-2.5 rounded-full font-medium transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-800 hover:bg-gray-50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 rounded-full border border-gray-200 bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors placeholder-gray-400;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm p-6;
+  }
+
+  .sidebar-link {
+    @apply flex items-center space-x-3 px-4 py-3 rounded-full text-gray-600 hover:bg-primary/5 hover:text-primary transition-colors;
+  }
+
+  .sidebar-link.active {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.delay-100 {
+  animation-delay: 2s;
+}
+
+.delay-200 {
+  animation-delay: 4s;
+}
